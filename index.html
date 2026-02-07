@@ -192,8 +192,7 @@
         <h1>Hi Hamster bread, will you be my valentine?</h1>
         <div class="button-container">
             <button id="yesBtn">Yes</button>
-            <button id="noBtn1">No</button>
-            <button id="noBtn2">No</button>
+            <button id="noBtn">No</button>
         </div>
         <div class="message" id="message"></div>
     </div>
@@ -219,20 +218,21 @@
         });
 
         const yesBtn = document.getElementById('yesBtn');
-        const noBtn1 = document.getElementById('noBtn1');
-        const noBtn2 = document.getElementById('noBtn2');
+        const noBtn = document.getElementById('noBtn');
         const messageDiv = document.getElementById('message');
+        let noClickCount = 0;
 
         yesBtn.addEventListener('click', function() {
             window.location.href = 'yes.html';
         });
 
-        noBtn1.addEventListener('click', function() {
-            window.location.href = 'no1.html';
-        });
-
-        noBtn2.addEventListener('click', function() {
-            window.location.href = 'no2.html';
+        noBtn.addEventListener('click', function() {
+            noClickCount++;
+            if (noClickCount === 1) {
+                window.location.href = 'no1.html';
+            } else if (noClickCount === 2) {
+                window.location.href = 'no2.html';
+            }
         });
     </script>
 </body>
