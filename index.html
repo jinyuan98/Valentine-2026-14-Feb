@@ -220,14 +220,19 @@
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const messageDiv = document.getElementById('message');
-        let noClickCount = 0;
+
+        // Get count from localStorage, default to 0
+        let noClickCount = parseInt(localStorage.getItem('noClickCount')) || 0;
 
         yesBtn.addEventListener('click', function() {
+            localStorage.removeItem('noClickCount');
             window.location.href = 'yes.html';
         });
 
         noBtn.addEventListener('click', function() {
             noClickCount++;
+            localStorage.setItem('noClickCount', noClickCount);
+            
             if (noClickCount === 1) {
                 window.location.href = 'no1.html';
             } else if (noClickCount === 2) {
