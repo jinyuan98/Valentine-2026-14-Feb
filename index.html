@@ -179,6 +179,19 @@
                 transform: scale(1.2);
             }
         }
+        /* audio player styling */
+        #audio-container {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 60;
+        }
+        #audio-container audio {
+            width: 320px;
+            max-width: calc(100vw - 40px);
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -240,6 +253,14 @@
                 window.location.href = 'no2.html';
             }
         });
+    </script>
+    <div id="audio-container">
+        <audio id="bgAudio" src="audio/index.mp3" controls loop preload="none"></audio>
+    </div>
+    <script>
+        const bgAudio = document.getElementById('bgAudio');
+        function tryPlay() { bgAudio.play().catch(()=>{}); document.removeEventListener('click', tryPlay); }
+        document.addEventListener('click', tryPlay, { once: true });
     </script>
 </body>
 </html>

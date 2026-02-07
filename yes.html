@@ -169,6 +169,19 @@
                 transform: translateY(-600px) translateX(100px) rotate(360deg);
             }
         }
+        /* audio player styling */
+        #audio-container {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 60;
+        }
+        #audio-container audio {
+            width: 320px;
+            max-width: calc(100vw - 40px);
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -220,6 +233,14 @@
         for (let i = 0; i < 5; i++) {
             setTimeout(createFloatingHeart, i * 100);
         }
+    </script>
+    <div id="audio-container">
+        <audio id="bgAudio" src="audio/yes.mp3" controls loop preload="none"></audio>
+    </div>
+    <script>
+        const bgAudio = document.getElementById('bgAudio');
+        function tryPlay(){ bgAudio.play().catch(()=>{}); document.removeEventListener('click', tryPlay); }
+        document.addEventListener('click', tryPlay, { once: true });
     </script>
 </body>
 </html>
