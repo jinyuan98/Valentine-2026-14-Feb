@@ -189,10 +189,11 @@
     <div class="floating-decoration decoration-4">💕</div>
     <div class="floating-decoration decoration-5">🎀</div>
     <div class="container">
-        <h1>Hi Hamsterbread,<br>will you be my Valentine?</h1>
+        <h1>Hi Hamster bread, will you be my valentine?</h1>
         <div class="button-container">
             <button id="yesBtn">Yes</button>
-            <button id="noBtn">No</button>
+            <button id="noBtn1">No</button>
+            <button id="noBtn2">No</button>
         </div>
         <div class="message" id="message"></div>
     </div>
@@ -217,56 +218,21 @@
             retina_detect: true
         });
 
-        let noClickCount = 0;
-
         const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
+        const noBtn1 = document.getElementById('noBtn1');
+        const noBtn2 = document.getElementById('noBtn2');
         const messageDiv = document.getElementById('message');
-        const buttonContainer = document.querySelector('.button-container');
-
-        const messages = [
-            "Are you sure? 🥺",
-            "Really sure? 💔",
-            "Think about it again! 🤔",
-            "Please? 🥺💕",
-            "You're breaking my heart! 💔",
-            "Last chance! 🌹"
-        ];
 
         yesBtn.addEventListener('click', function() {
             window.location.href = 'yes.html';
         });
 
-        // Dodge the cursor functionality
-        noBtn.addEventListener('mouseover', function() {
-            if (noClickCount > 0) {
-                // Random position within the viewport
-                const randomX = (Math.random() - 0.5) * 400;
-                const randomY = (Math.random() - 0.5) * 300;
-                
-                noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
-            }
+        noBtn1.addEventListener('click', function() {
+            window.location.href = 'no1.html';
         });
 
-        noBtn.addEventListener('click', function() {
-            noClickCount++;
-
-            // Increase the Yes button size with a maximum limit
-            const maxScale = 3;
-            const newScale = Math.min(1 + noClickCount * 0.3, maxScale);
-            const newFontSize = Math.min(18 + noClickCount * 5, 50);
-            
-            yesBtn.style.transform = `scale(${newScale})`;
-            yesBtn.style.fontSize = `${newFontSize}px`;
-
-            // Show message
-            if (noClickCount <= messages.length) {
-                messageDiv.textContent = messages[noClickCount - 1];
-                messageDiv.innerHTML += ' <span class="heart-animation">❤️</span>';
-            }
-
-            // Make No button harder to click
-            noBtn.style.opacity = Math.max(0.3, 1 - noClickCount * 0.1);
+        noBtn2.addEventListener('click', function() {
+            window.location.href = 'no2.html';
         });
     </script>
 </body>

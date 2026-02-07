@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh No... 💔</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffb3ba, #ffcccb, #ffc0cb);
+            animation: gradient-shift 6s ease infinite;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background: linear-gradient(135deg, #ffb3ba, #ffcccb, #ffc0cb);
+            }
+            50% {
+                background: linear-gradient(135deg, #ffcccb, #ffc0cb, #ffb3d9);
+            }
+            100% {
+                background: linear-gradient(135deg, #ffb3ba, #ffcccb, #ffc0cb);
+            }
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.6;
+            font-size: 40px;
+        }
+
+        @keyframes float-around {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) translateX(30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-60px) translateX(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) translateX(-30px) rotate(270deg);
+            }
+            100% {
+                transform: translateY(0) translateX(0) rotate(360deg);
+            }
+        }
+
+        .decoration-1 { animation: float-around 8s ease-in-out infinite; top: 10%; left: 10%; }
+        .decoration-2 { animation: float-around 10s ease-in-out infinite reverse; top: 20%; right: 15%; }
+        .decoration-3 { animation: float-around 12s ease-in-out infinite; bottom: 20%; left: 15%; }
+        .decoration-4 { animation: float-around 9s ease-in-out infinite reverse; top: 30%; right: 10%; }
+        .decoration-5 { animation: float-around 11s ease-in-out infinite; bottom: 15%; right: 20%; }
+
+        .container {
+            background: white;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(139, 92, 246, 0.3);
+            text-align: center;
+            max-width: 600px;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        .hearts-large {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: sadBeat 0.8s ease infinite;
+        }
+
+        @keyframes sadBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 54px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #d32f2f;
+            font-size: 22px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .message {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            background: #ffe0e0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #d32f2f;
+        }
+
+        .back-button {
+            margin-top: 30px;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #d32f2f, #ff6b6b);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .back-button a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(211, 47, 47, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-decoration decoration-1">💔</div>
+    <div class="floating-decoration decoration-2">😢</div>
+    <div class="floating-decoration decoration-3">🥀</div>
+    <div class="floating-decoration decoration-4">😭</div>
+    <div class="floating-decoration decoration-5">💫</div>
+    <div class="container">
+        <div class="hearts-large">💔 😔 💔</div>
+        <h1>Oh No... 😭</h1>
+        <div class="subtitle">My heart just broke a little...</div>
+        <div class="message">
+            I'm so sad that you said no... 💔 But that's okay, I still think you're amazing. Maybe you just need more time? Either way, I'll always appreciate you!
+        </div>
+        <div class="back-button">
+            <a href="index.html">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
