@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Said Yes! 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #d4b5ff, #c99bff, #b88bff);
+            animation: gradient-shift 6s ease infinite;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background: linear-gradient(135deg, #d4b5ff, #c99bff, #b88bff);
+            }
+            50% {
+                background: linear-gradient(135deg, #c99bff, #b88bff, #a870ff);
+            }
+            100% {
+                background: linear-gradient(135deg, #d4b5ff, #c99bff, #b88bff);
+            }
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.6;
+            font-size: 40px;
+        }
+
+        @keyframes float-around {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) translateX(30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-60px) translateX(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) translateX(-30px) rotate(270deg);
+            }
+            100% {
+                transform: translateY(0) translateX(0) rotate(360deg);
+            }
+        }
+
+        .decoration-1 { animation: float-around 8s ease-in-out infinite; top: 10%; left: 10%; }
+        .decoration-2 { animation: float-around 10s ease-in-out infinite reverse; top: 20%; right: 15%; }
+        .decoration-3 { animation: float-around 12s ease-in-out infinite; bottom: 20%; left: 15%; }
+        .decoration-4 { animation: float-around 9s ease-in-out infinite reverse; top: 30%; right: 10%; }
+        .decoration-5 { animation: float-around 11s ease-in-out infinite; bottom: 15%; right: 20%; }
+
+        .container {
+            background: white;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(139, 92, 246, 0.3);
+            text-align: center;
+            max-width: 600px;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        .hearts-large {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: heartBeat 0.8s ease infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        h1 {
+            color: #8B5CF6;
+            font-size: 54px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #8B5CF6;
+            font-size: 22px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .message {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            background: #fff0f5;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #8B5CF6;
+        }
+
+        .back-button {
+            margin-top: 30px;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #8B5CF6, #a78bfa);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .back-button a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        .floating-hearts {
+            position: fixed;
+            font-size: 40px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes float-up {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-600px) translateX(100px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-decoration decoration-1">💜</div>
+    <div class="floating-decoration decoration-2">✨</div>
+    <div class="floating-decoration decoration-3">🌹</div>
+    <div class="floating-decoration decoration-4">💕</div>
+    <div class="floating-decoration decoration-5">🎀</div>
+    <div class="container">
+        <div class="hearts-large">❤️ 💕 ❤️</div>
+        <h1>Yes!!!! 🎉</h1>
+        <div class="subtitle">You just made me the happiest person!</div>
+        <div class="message">
+            YAYYYY!! I knew you say yes ❤️ HEHEHEHEHEHE Lets have a wonderful and happy valentine day. Looking forward to it already woohooooo!!
+        </div>
+        <div class="back-button">
+            <a href="index.html">Go Back</a>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-hearts');
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = window.innerHeight + 'px';
+
+            const duration = 3 + Math.random() * 2;
+            heart.style.animation = `float-up ${duration}s ease-in forwards`;
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), duration * 1000);
+        }
+
+        // Create hearts continuously
+        const heartInterval = setInterval(createFloatingHeart, 300);
+
+        // Clean up
+        window.addEventListener('beforeunload', () => {
+            clearInterval(heartInterval);
+        });
+
+        // Initial hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createFloatingHeart, i * 100);
+        }
+    </script>
+</body>
+</html>
